@@ -1,0 +1,29 @@
+### Create sample
+# @name create
+POST http://localhost:8080/api/samples
+Content-Type: application/json
+
+{
+  "customerId": "c-123",
+  "item": "laptop",
+  "quantity": 2
+}
+
+### Get sample by id (uses id from "Create sample" response)
+GET http://localhost:8080/api/samples/{{create.response.body.sampleId}}
+
+### Get all samples
+GET http://localhost:8080/api/samples
+
+### Not found (404)
+GET http://localhost:8080/api/samples/does-not-exist
+
+### Validation failure (400)
+POST http://localhost:8080/api/samples
+Content-Type: application/json
+
+{
+  "customerId": "",
+  "item": "laptop",
+  "quantity": 0
+}

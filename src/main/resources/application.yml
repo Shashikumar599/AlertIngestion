@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+external:
+  base-url: https://jsonplaceholder.typicode.com
+  connect-timeout: 2s
+  read-timeout: 5s
+
+
+logging:
+  level:
+    root: INFO
+    org.example: DEBUG
+
+Threads:
+  count:5
